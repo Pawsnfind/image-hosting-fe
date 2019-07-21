@@ -5,12 +5,12 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { withRouter, BrowserRouter as Router } from "react-router-dom";
 import {dafuxHOC, DaFux} from "./components/dafux";
-import history from './components/history'
+ 
 const AppWithRouter = withRouter(dafuxHOC(App));
 
 ReactDOM.render(
   
-      <Router history={history}>
+      <Router>
      
        <AppWithRouter />
  

@@ -2,7 +2,7 @@ import auth0 from 'auth0-js';
 import jwtDecode from 'jwt-decode';
 import axios from 'axios';
 import { DaFux } from './dafux';
-import history from './history'
+ 
 
  
 
@@ -26,7 +26,7 @@ export default class Auth {
     authenticate = () => {
         this.auth0.parseHash((err, authResult) => {
             if(err) {
-                history.replace('/')
+                DaFux.changeRoute('/');
             }
             else {
                 this.authBackend(authResult);
@@ -68,7 +68,8 @@ export default class Auth {
         ).then(res => {
             console.log(res)
             DaFux.addValue('api_key', res.data.response);
-            history.replace('/dashboard')
+            DaFux.changeRoute('/dashboard');
+            //history.replace('/')
         });
         
   

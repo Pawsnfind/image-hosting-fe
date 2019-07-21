@@ -23,7 +23,9 @@ function App() {
          
           return <Authenticate {...props} auth={auth}/>
         }}  />
- 
+      <Switch>
+       <Redirect exact from='/' to ='/dashboard' />
+    </Switch>
   </div>
   );
 }

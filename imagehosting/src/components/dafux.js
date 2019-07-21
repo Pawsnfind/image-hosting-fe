@@ -25,6 +25,10 @@ const dafuxHOC = (Component) => {
         this.components.forEach(component => component.setState(this.state));
 
     }
+
+    changeRoute(route){
+        this.props.history.push(route);
+    }
     async addComponent(component){
         this.components.push(component);
         await component.setState(this.state);
