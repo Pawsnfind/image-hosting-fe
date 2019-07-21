@@ -1,4 +1,19 @@
 .dashboard {
+    width: 100%;
     position: absolute;
+    display: flex;
+    flex-direction: row;
     top: 100px;
+}
+
+.api_key{
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid grey;
+    border-top: 2px solid grey;
+    padding: 20px 0 20px 0;
+    font-size: 1.25rem;
+    font-weight: bold;
 }

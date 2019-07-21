@@ -13,8 +13,9 @@ import './dashboard.css';
     render() {
         return(
         <div className="dashboard">
-       
-            {this.state && this.state.api_key   && <div>API KEY: {this.state.api_key} </div>}
+           
+                {this.state && this.state.api_key   && <div className='api_key'>API KEY: {this.state.api_key} </div>}
+        
         </div>
     );
   }

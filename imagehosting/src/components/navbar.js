@@ -2,16 +2,14 @@ import React from 'react';
 import { Navbar, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './navbar.css';
+import { DaFux } from './dafux';
 
 export default class NavBar extends React.Component {
-    constructor(props){
-        super(props);
-   
-    }
+ 
 
     logout = () => {
         window.localStorage.removeItem('auth');
-        this.props.history.push('/');
+        DaFux.changerRoute('/');
     }
 
     login = () => {
@@ -25,8 +23,13 @@ export default class NavBar extends React.Component {
                 <Navbar.Brand href="/">BeagleBit</Navbar.Brand>
                 <div>
 
-                    
+                    {localStorage.getItem('auth') !== null ? (
                      <Button className="btn  ml-auto mr-1" variant="success" onClick={this.login}>Sign in</Button>
+                    ) : (
+                        <Button className="btn  ml-auto mr-1" variant="success" onClick={this.logout}>Sign Out</Button>
+                    )}
+
+                     
                 </div>
             </Navbar>
 
